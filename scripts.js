@@ -42,13 +42,14 @@ const makePally = (yourWord) => {
       output.push(rev+yourWord);
     }
   }
-  for (i = 1; i < yourWord.length; i++) {
-    temp = revString(yourWord)
-    temp = temp.substring(i);
-    rev = revString(temp);
-    console.log(rev+yourWord) //bugs out here
-
-  }
+  // for (i = 1; i < yourWord.length; i++) {
+  //   temp = revString(yourWord)
+  //   temp = temp.substring(i);
+  //   rev = revString(temp);
+  //   console.log(rev+yourWord) //bugs out here
+  //
+  // }
+  //output.sort(); //final sorting
   return output;
 }
 
@@ -59,6 +60,6 @@ $(document).ready(function() {
   $('#form1').submit(function(event) {
   event.preventDefault();
   let input1 = $('#input1').val();
-  $('#output-section-1').text(JSON.stringify(1));
+  $('#output-section-1').text(makePally(input1));
   })
 });
