@@ -49,8 +49,8 @@ const makePally = (yourWord) => {
   //   console.log(rev+yourWord) //bugs out here
   //
   // }
-  //output.sort(); //final sorting
-  return output;
+  output.sort(); //final sorting
+  return output[0];
 }
 
 let test1 = 'race'
