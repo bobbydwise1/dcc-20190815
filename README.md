@@ -9,3 +9,5 @@ _Given a string, find the palindrome that can be made by inserting the fewest nu
 _For example, given the string "race", you should return "ecarace", since we can add three letters to it (which is the smallest amount to make a palindrome). There are seven other palindromes that can be made from "race" by adding three letters, but "ecarace" comes first alphabetically._
 
 _As another example, given the string "google", you should return "elgoogle"._
+
+Note: Source dictionary for palindromes referenced at:  https://en.wiktionary.org/wiki/Appendix:English_palindromes
