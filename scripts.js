@@ -20,15 +20,18 @@ const revString = (yourString) => {
   return output;
 }
 
-// const makePally = (yourWord) => {
-//   let output = [];
-//   for (i=0; i<yourWord.length; i++) {
-//
-//   }
-// }
+const makePally = (yourWord) => {
+  let output = [];
+  for (i=1; i<yourWord.length; i++) {
+    let temp = yourWord.slice(i);
+    let flip = revString(temp);
+    output.push(flip+yourWord);
+  }
+  return output;
+}
 
 let test = 'race'
-console.log(revString(test))
+console.log(makePally(test))
 
 $(document).ready(function() {
   $('#form1').submit(function(event) {
