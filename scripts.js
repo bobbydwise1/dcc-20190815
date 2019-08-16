@@ -10,7 +10,25 @@ For example, given the string "race", you should return "ecarace", since we can 
 As another example, given the string "google", you should return "elgoogle".
 */
 
+//Note - the palindromes are not checked if they are legit English words.
 
+const revString = (yourString) => {
+  let output = '';
+  for (i=yourString.length-1; i>=0; i--) {
+    output = output + yourString[i];
+  }
+  return output;
+}
+
+// const makePally = (yourWord) => {
+//   let output = [];
+//   for (i=0; i<yourWord.length; i++) {
+//
+//   }
+// }
+
+let test = 'race'
+console.log(revString(test))
 
 $(document).ready(function() {
   $('#form1').submit(function(event) {
