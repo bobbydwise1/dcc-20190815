@@ -19,26 +19,32 @@ const revString = (yourString) => {
   } else if (yourString.length == 1) {
     return yourString;
   } else {
-    for (i=yourString.length-1; i>=0; i--) {
-      output = output + yourString[i];
+    for (let j = yourString.length-1; j>=0; j--) {
+      output = output + yourString[j];
     }
   }
   return output;
 }
 
+const checkPally = (yourWord) => {
+  let left = yourWord.substring(0,Math.floor(yourWord.length/2))
+  let right = yourWord.substring(Math.ceil(yourWord.length/2))
+  if (revString(left) === right) {return 1}
+  return 0;
+}
+
 const makePally = (yourWord) => {
   let output = [];
-  let revved = revString(yourWord)
-  for (i=1; i < yourWord.length; i++) {
+  for (let i = 1; i < yourWord.length; i++) {
     let temp = yourWord.substring(i);
-    console.log(temp)
-//    let rev = revString(temp); //bugs out here infinitely
+    let rev = revString(temp);
+    output.push(rev+yourWord);
   }
   return output;
 }
 
-let test = 'race'
-console.log(makePally(test))
+let test1 = 'race'
+console.log(makePally(test1))
 
 $(document).ready(function() {
   $('#form1').submit(function(event) {
