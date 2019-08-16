@@ -14,18 +14,25 @@ As another example, given the string "google", you should return "elgoogle".
 
 const revString = (yourString) => {
   let output = '';
-  for (i=yourString.length-1; i>=0; i--) {
-    output = output + yourString[i];
+  if (yourString.length < 1) {
+    return null
+  } else if (yourString.length == 1) {
+    return yourString;
+  } else {
+    for (i=yourString.length-1; i>=0; i--) {
+      output = output + yourString[i];
+    }
   }
   return output;
 }
 
 const makePally = (yourWord) => {
   let output = [];
-  for (i=1; i<yourWord.length; i++) {
-    let temp = yourWord.slice(i);
-    let flip = revString(temp);
-    output.push(flip+yourWord);
+  let revved = revString(yourWord)
+  for (i=1; i < yourWord.length; i++) {
+    let temp = yourWord.substring(i);
+    console.log(temp)
+//    let rev = revString(temp); //bugs out here infinitely
   }
   return output;
 }
