@@ -38,7 +38,16 @@ const makePally = (yourWord) => {
   for (let i = 1; i < yourWord.length; i++) {
     let temp = yourWord.substring(i);
     let rev = revString(temp);
-    output.push(rev+yourWord);
+    if (checkPally(rev+yourWord)) {
+      output.push(rev+yourWord);
+    }
+  }
+  for (i = 1; i < yourWord.length; i++) {
+    temp = revString(yourWord)
+    temp = temp.substring(i);
+    rev = revString(temp);
+    console.log(rev+yourWord) //bugs out here
+
   }
   return output;
 }
